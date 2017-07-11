@@ -169,8 +169,7 @@ public class DialPadFragment extends BaseFragment {
     @Override
     public void initialUI() {
         actionBar = (LinearLayout) contentView.findViewById(R.id.actionBar_DialPad);
-        initialActionBar(R.drawable.ic_add_icon,
-                "拨打电话", R.drawable.ic_backspace);
+        initialActionBar(R.drawable.ic_add_icon, "拨打电话", R.drawable.ic_backspace);
         imageView_Left = (ImageView) actionBar.findViewById(
                 R.id.imageView_ActionBar_Left);
         imageView_Right = (ImageView) actionBar.findViewById(

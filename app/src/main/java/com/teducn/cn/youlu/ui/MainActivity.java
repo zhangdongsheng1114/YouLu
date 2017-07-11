@@ -34,14 +34,11 @@ public class MainActivity extends FragmentActivity {
         setDefaultSMS();
     }
 
-
     private void setDefaultSMS() {
         //获得原有的默认短信应用
         defaultSmsApp = Telephony.Sms.getDefaultSmsPackage(this);
         Intent intent = new Intent(Telephony.Sms.Intents.ACTION_CHANGE_DEFAULT);
-        intent.putExtra(
-                Telephony.Sms.Intents.EXTRA_PACKAGE_NAME,
-                getPackageName());
+        intent.putExtra(Telephony.Sms.Intents.EXTRA_PACKAGE_NAME, getPackageName());
         startActivity(intent);
     }
 
@@ -131,12 +128,10 @@ public class MainActivity extends FragmentActivity {
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
         //把原来的系统短信应用还原回默认短信应用
         Intent intent = new Intent(Telephony.Sms.Intents.ACTION_CHANGE_DEFAULT);
-        intent.putExtra(
-                Telephony.Sms.Intents.EXTRA_PACKAGE_NAME,
-                defaultSmsApp);
+        intent.putExtra(Telephony.Sms.Intents.EXTRA_PACKAGE_NAME, defaultSmsApp);
         startActivity(intent);
+        super.onDestroy();
     }
 }

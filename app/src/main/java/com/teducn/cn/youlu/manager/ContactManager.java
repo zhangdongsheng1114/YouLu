@@ -56,14 +56,11 @@ public class ContactManager {
         ContentResolver resolver = context.getContentResolver();
         //content://com.tanfa.aaa
         Uri contact_Uri = ContactsContract.Contacts.CONTENT_URI;
-        String[] project = new String[]{ContactsContract.Contacts._ID,
-                ContactsContract.Contacts.PHOTO_ID};
+        String[] project = new String[]{ContactsContract.Contacts._ID, ContactsContract.Contacts.PHOTO_ID};
         Cursor cursor = resolver.query(contact_Uri, project, null, null, null);
 
         Uri data_Uri = ContactsContract.Data.CONTENT_URI;
-        String[] dataProject = new String[]{
-                ContactsContract.Data.MIMETYPE,
-                ContactsContract.Data.DATA1};
+        String[] dataProject = new String[]{ContactsContract.Data.MIMETYPE, ContactsContract.Data.DATA1};
         //遍历游标
         while (cursor.moveToNext()) {
             Contact contact = new Contact();
@@ -183,8 +180,7 @@ public class ContactManager {
             ContentResolver resolver = context.getContentResolver();
             //获得访问通话记录的Uri
             Uri uri = CallLog.Calls.CONTENT_URI;
-            String projection[] = new String[]{CallLog.Calls._ID, CallLog.Calls.NUMBER,
-                    CallLog.Calls.TYPE,
+            String projection[] = new String[]{CallLog.Calls._ID, CallLog.Calls.NUMBER, CallLog.Calls.TYPE,
                     CallLog.Calls.DATE,
             };
             String order = CallLog.Calls.DATE + " desc";
