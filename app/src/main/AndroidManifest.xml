@@ -21,15 +21,6 @@
     <uses-permission android:name="android.permission.WRITE_SMS" />
 
 
-    <!-- 订阅接收短信的广播的权限 -->
-    <uses-permission android:name="android.permission.RECEIVE_SMS" />
-    <!-- 发送短信的权限 -->
-    <uses-permission android:name="android.permission.SEND_SMS" />
-    <!-- 读取短信的权限 -->
-    <uses-permission android:name="android.permission.READ_SMS" />
-    <uses-permission android:name="android.permission.RECEIVE_MMS" />
-    <uses-permission android:name="android.permission.WRITE_SMS" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -49,6 +40,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
                 <action android:name="android.intent.action.SENDTO" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
@@ -59,15 +51,20 @@
             </intent-filter>
         </activity>
         <!-- BroadcastReceiver that listens for incoming SMS messages -->
-        <receiver android:name=".ui.ChatActivity$SMSReceiver">
-            <action android:name="android.provider.Telephony.SMS_RECEIVED" />
-            <action android:name="android.provider.Telephony.SMS_DELIVER" />
+        <receiver
+            android:name=".ui.ChatActivity$SMSReceiver"
+            android:permission="android.permission.BROADCAST_SMS">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+                <action android:name="android.provider.Telephony.SMS_DELIVER" />
+            </intent-filter>
         </receiver>
         <!--          Service that delivers messages from the phone "quick response" -->
         <service
             android:name=".service.HeadlessSmsSendService"
             android:enabled="true"
-            android:exported="true">
+            android:exported="true"
+            android:permission="android.permission.SEND_RESPOND_VIA_MESSAGE">
             <intent-filter>
                 <action android:name="android.intent.action.RESPOND_VIA_MESSAGE" />
 
@@ -83,7 +80,8 @@
         <receiver
             android:name=".receiver.MmsReceiver"
             android:enabled="true"
-            android:exported="true">
+            android:exported="true"
+            android:permission="android.permission.BROADCAST_WAP_PUSH">
             <intent-filter>
                 <action android:name="android.provider.Telephony.WAP_PUSH_DELIVER" />
                 <data android:mimeType="application/vnd.wap.mms-message" />
