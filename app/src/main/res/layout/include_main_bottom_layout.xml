@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <RadioGroup
+        android:id="@+id/radioGroup_Bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_bg"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioButton_CallLog"
+            style="@style/bottom_button_style"
+            android:drawableTop="@drawable/calllog_selector" />
+
+        <RadioButton
+            android:id="@+id/radioButton_Contact"
+            style="@style/bottom_button_style"
+            android:checked="true"
+            android:drawableTop="@drawable/contact_selector" />
+
+        <RadioButton
+            android:id="@+id/radioButton_DialPad"
+            style="@style/bottom_button_style"
+            android:drawableTop="@drawable/dailpad_selector" />
+
+        <RadioButton
+            android:id="@+id/radioButton_SMS"
+            style="@style/bottom_button_style"
+            android:drawableTop="@drawable/sms_selector" />
+    </RadioGroup>
+</LinearLayout>

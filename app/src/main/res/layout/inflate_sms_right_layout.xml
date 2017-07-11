@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#55e3e3e3"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/textView_SMS_Date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="5dp"
+        android:text="13:20:22" />
+
+    <ImageView
+        android:id="@+id/imageView_SMS_Header"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView_SMS_Date"
+        android:layout_marginTop="5dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/textView_SMS_Body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView_SMS_Header"
+        android:layout_toStartOf="@+id/imageView_SMS_Header"
+        android:background="@drawable/chat_right_gb"
+        android:text="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
+
+</RelativeLayout>

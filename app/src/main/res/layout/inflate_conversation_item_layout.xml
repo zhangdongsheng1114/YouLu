@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:padding="3dp">
+
+    <FrameLayout
+        android:id="@+id/frame_Conversation"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="5dp">
+
+        <ImageView
+            android:id="@+id/imageView_Conversation_Header"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@mipmap/ic_launcher" />
+
+        <ImageView
+            android:id="@+id/imageView_Conversation_Warning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:src="@drawable/ic_warning" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/textView_Conversation_Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/frame_Conversation"
+        android:text="联系人姓名" />
+
+    <ImageView
+        android:id="@+id/imageView_Conversation_UnRead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/frame_Conversation"
+        android:src="@drawable/ic_unread" />
+
+    <TextView
+        android:id="@+id/textView_Conversation_Body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/imageView_Conversation_UnRead"
+        android:text="会话摘要内容" />
+
+    <TextView
+        android:id="@+id/textView_Conversation_Date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:text="通话时间" />
+</RelativeLayout>

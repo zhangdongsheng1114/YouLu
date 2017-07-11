@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.teducn.cn.youlu.fragment.ContactFragment">
+
+    <include
+        android:id="@+id/actionBar_Contact"
+        layout="@layout/include_actionbar_layout" />
+
+    <GridView
+        android:id="@+id/gridView_Contact"
+        style="@style/list_style"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="3"
+        android:paddingTop="10dp"
+        android:verticalSpacing="10dp" />
+
+</LinearLayout>

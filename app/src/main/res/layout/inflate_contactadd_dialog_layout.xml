@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="30dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@drawable/dialog_header">
+
+        <ImageView
+            android:id="@+id/imageView_ContactAdd_Close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:padding="3dp"
+            android:src="@drawable/ic_close" />
+
+        <ImageView
+            android:id="@+id/imageView_ContactAdd_Confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:padding="3dp"
+            android:src="@drawable/ic_selected" />
+
+        <EditText
+            android:id="@+id/editText_ContactAdd_Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/line"
+            android:hint="联系人姓名(必填)" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:background="@drawable/gray_bg"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/editText_ContactAdd_Number"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/line"
+            android:hint="电话号码(必填)" />
+
+        <EditText
+            android:id="@+id/editText_ContactAdd_Email"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/line"
+            android:hint="电子邮箱" />
+
+        <EditText
+            android:id="@+id/editText_ContactAdd_Postal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/line"
+            android:hint="通讯地址" />
+
+        <EditText
+            android:id="@+id/editText_ContactAdd_Company"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/line"
+            android:hint="公司名称" />
+    </LinearLayout>
+</LinearLayout>
